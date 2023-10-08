@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+}
+
+input, select {
+    border: none;
+    border: 2px solid #EBEAED;
+    border-radius: 10px;
+    padding: .5rem 1rem;
+}
+
+.books {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    &__title {
+        font-size: 2rem;
+        left: 1.5;
+        margin-bottom: 2rem;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 5%;
+    padding-left: 5%;
+
+}
+.books__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 2rem;
+}
+
+.books__controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+    .books__sort { grid-area: 1 / 1 / 2 / 2; }
+    .books__filter { grid-area: 1 / 2 / 2 / 3; }
+    .books__rating-checkin { grid-area: 1 / 3 / 2 / 4; }
+    .books__century-checkin { grid-area: 2 / 1 / 3 / 2; }
+    .books__search { 
+        grid-area: 2 / 2 / 3 / 4; 
+        input {
+            width: 100%;
+        }
+    
+    }
+}
+
+
+
+.book-card {
+    border: 2px solid #EBEAED;
+    border-radius: 10px;
+    position: relative;
+    &__body {
+        padding: 1rem;
+    }
+    &__title {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #39363f;
+    }
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    &__author {
+        font-size: 1rem;
+        line-height: 1.5;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #39363f;
+    }
+    &__year, &__genre {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        text-transform: uppercase;
+    }
+    &__year {
+        color: #39363f;
+    }
+    &__genre {
+        padding: 0.2rem 1rem;
+        color: white;
+        font-weight: 500;
+        border-radius: 100px;
+        &.-fiction {
+            background-color: #E93A7D;
+        }
+        &.-sciencefiction {
+            background-color: #3ae9a6;
+        }
+        &.-fantasy {
+            background-color: #d5e93a;
+        }
+        &.-adventure {
+            background-color: #4e3ae9;
+        }
+        &.-horror {
+            background-color: #7de93a;
+        }
+        &.-dystopian {
+            background-color: #3a7de9;
+        }
+        &.-mystery {
+            background-color: #e9a63a;
+        }
+    }
+    &__image {
+        height: 300px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px 10px 0 0;
+        }
+    }
+    &__description {
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center; 
+        margin-bottom: 2rem;  
+        color: #736d7f;     
+    }
+    &__rating {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: #afabb7;
+    }
+}
