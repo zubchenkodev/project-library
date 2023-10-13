@@ -224,23 +224,41 @@ const showNoBooksMessage = () => {
 }
 
 const sortBy = (selectorValue, books) => {
+  let sortedBooks;
   if(selectorValue == 'none') {
-    let sortedBooks = [...books];
+    sortedBooks = [...books];
     return sortedBooks;
   } else {
-  let sortedBooks = books.sort((a, b) => {
-    const itemA = a[selectorValue];
-    const itemB = b[selectorValue];
-
-    if (itemA < itemB) {
-      return -1;
-    } else if (itemA > itemB) {
-      return 1;
-    } else {
-      return 0;
-    }
-
-  })
+  if(selectorValue === 'title'){
+      sortedBooks = books.sort((a, b) => {
+      const itemA = a['title'];
+      const itemB = b['title'];
+  
+      if (itemA < itemB) {
+        return -1;
+      } else if (itemA > itemB) {
+        return 1;
+      } else {
+        return 0;
+      }
+  
+    })
+  } else {
+      sortedBooks = books.sort((a, b) => {
+      const itemA = a['title'];
+      const itemB = b['title'];
+  
+      if (itemA > itemB) {
+        return -1;
+      } else if (itemA < itemB) {
+        return 1;
+      } else {
+        return 0;
+      }
+  
+    })
+  }
+  
   return sortedBooks;
   }
   
